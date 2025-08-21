@@ -1,0 +1,8 @@
+stu=["anu","bala","raju","ram","rose"]
+marks=[[20,30,70,10,34],[40,50,60,44,56],[23,45,67,89,98],[45,67,89,79,78],[56,78,90,66,45]]
+per=[]
+for i in marks:
+    d=sum(i)//3
+    per.append(d)
+for i in range(5):
+    print("{}.{} :{}%".format(i+1,stu[i],per[i]))
