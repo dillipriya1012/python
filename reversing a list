@@ -1,0 +1,54 @@
+class Stack:
+    def __init__(self):
+        self.stack = []  
+    def push(self, item):
+        self.stack.append(item)
+        print(item, "pushed into stack")
+    def pop(self):
+        if self.is_empty():
+            print("Stack is empty. Cannot pop")
+        else:
+            removed = self.stack.pop()
+            print(removed, "popped from stack")
+
+    def peek(self):
+        if self.is_empty():
+            print("Stack is empty")
+        else:
+            print("Top element is:", self.stack[-1])
+
+    def is_empty(self):
+        return len(self.stack) == 0
+
+    def display(self):
+        if self.is_empty():
+            print("Stack is empty")
+        else:
+            print("Stack elements:", self.stack)
+    def count_max(self):
+        if self.is_empty():
+            print("Stack is empty")
+        else:
+            m=max(self.stack)
+            print("Count of Max value",self.stack.count(m))
+    def reverse(self):
+        if self.is_empty():
+            print("Stack is empty")
+        else:
+            n=len(self.stack)
+            for i in range(n//2+1):
+                t=self.stack[i]
+                self.stack[i]=self.stack[n-i-1]
+                self.stack[n-i-1]=t
+            print(self.stack)
+
+# Drive Code
+s = Stack()
+s.push(1)
+s.push(10)
+s.push(-1)
+s.push(8)
+s.push(3)
+s.push(0)
+s.display()
+s.reverse()
