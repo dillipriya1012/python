@@ -1,0 +1,26 @@
+a=[[21,42,63,84],
+   [10,23,45,67],
+   [54,68,12,14],
+   [90,32,88,65],
+   [22,76,2,4,9],
+   ]
+row=len(a)
+column=len(a[0])
+top=0
+left=0
+bottom = row-1
+right=column-1
+while(top<=bottom and left<=right):
+    for i in range(left,right+1):
+        print(a[top][i],end=" ")
+    top=top+1
+    for i in range(top,bottom+1,+1):
+        print(a[i][right],end=" ")
+    right=right-1
+    for i in range(right,left-1,-1):
+        print(a[bottom][i],end =" ")
+    bottom=bottom-1
+    for i in range(bottom,top-1,-1):
+        print(a[i][left],end=" ")
+    left=left+1    
+    
